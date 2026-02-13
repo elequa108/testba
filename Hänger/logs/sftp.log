@@ -1,0 +1,61 @@
+Feb 13 20:32:17 10.71.56.0 a1751957 Connection from 10.71.56.0 port 41088 on 82.165.90.90 port 22 rdomain ""
+Feb 13 20:32:20 10.71.56.0 a1751957 Failed password for a1751957 from 10.71.56.0 port 41088 ssh2
+Feb 13 20:32:35 10.71.56.0 a1751957 Connection from 10.71.56.0 port 14878 on 82.165.90.90 port 22 rdomain ""
+Feb 13 20:32:36 10.71.56.0 a1751957 Accepted password for a1751957 from 10.71.56.0 port 14878 ssh2
+Feb 13 20:32:36 10.71.56.0 a1751957 Starting session: subsystem 'sftp' for a1751957 from 10.71.56.0 port 14878 id 0
+Feb 13 20:32:36 10.71.56.0 a1751957 session opened for local user a1751957 from [10.71.56.0]
+Feb 13 20:32:48 10.71.56.0 a1751957 sent status No such file
+Feb 13 20:32:48 10.71.56.0 a1751957 Connection from 10.71.56.0 port 24264 on 82.165.90.90 port 22 rdomain ""
+Feb 13 20:32:48 10.71.56.0 a1751957 Accepted password for a1751957 from 10.71.56.0 port 24264 ssh2
+Feb 13 20:32:48 10.71.56.0 a1751957 Connection from 10.71.56.0 port 24274 on 82.165.90.90 port 22 rdomain ""
+Feb 13 20:32:48 10.71.56.0 a1751957 Accepted password for a1751957 from 10.71.56.0 port 24274 ssh2
+Feb 13 20:32:49 10.71.56.0 a1751957 Starting session: subsystem 'sftp' for a1751957 from 10.71.56.0 port 24264 id 0
+Feb 13 20:32:49 10.71.56.0 a1751957 Starting session: subsystem 'sftp' for a1751957 from 10.71.56.0 port 24274 id 0
+Feb 13 20:32:49 10.71.56.0 a1751957 session opened for local user a1751957 from [10.71.56.0]
+Feb 13 20:32:49 10.71.56.0 a1751957 session opened for local user a1751957 from [10.71.56.0]
+Feb 13 20:32:49 10.71.56.0 a1751957 open "/crew.js" flags READ mode 0666
+Feb 13 20:32:49 10.71.56.0 a1751957 open "/crew.html" flags READ mode 0666
+Feb 13 20:32:49 10.71.56.0 a1751957 close "/crew.js" bytes read 6522 written 0
+Feb 13 20:32:49 10.71.56.0 a1751957 close "/crew.html" bytes read 1094 written 0
+Feb 13 20:32:49 10.71.56.0 a1751957 [10.71.56.0|get|0|6522|0|0|0|2f637265772e6a73|]
+Feb 13 20:32:49 10.71.56.0 a1751957 [10.71.56.0|get|0|1094|0|0|0|2f637265772e68746d6c|]
+Feb 13 20:32:49 10.71.56.0 a1751957 open "/delete_song.php" flags READ mode 0666
+Feb 13 20:32:49 10.71.56.0 a1751957 open "/delete_all_songs.php" flags READ mode 0666
+Feb 13 20:32:49 10.71.56.0 a1751957 close "/delete_all_songs.php" bytes read 137 written 0
+Feb 13 20:32:49 10.71.56.0 a1751957 [10.71.56.0|get|0|137|0|0|0|2f64656c6574655f616c6c5f736f6e67732e706870|]
+Feb 13 20:32:49 10.71.56.0 a1751957 close "/delete_song.php" bytes read 664 written 0
+Feb 13 20:32:49 10.71.56.0 a1751957 [10.71.56.0|get|0|664|0|0|0|2f64656c6574655f736f6e672e706870|]
+Feb 13 20:32:49 10.71.56.0 a1751957 open "/get_songs.php" flags READ mode 0666
+Feb 13 20:32:49 10.71.56.0 a1751957 open "/index.html" flags READ mode 0666
+Feb 13 20:32:49 10.71.56.0 a1751957 close "/get_songs.php" bytes read 139 written 0
+Feb 13 20:32:49 10.71.56.0 a1751957 close "/index.html" bytes read 1172 written 0
+Feb 13 20:32:49 10.71.56.0 a1751957 [10.71.56.0|get|0|139|0|0|0|2f6765745f736f6e67732e706870|]
+Feb 13 20:32:49 10.71.56.0 a1751957 [10.71.56.0|get|0|1172|0|0|0|2f696e6465782e68746d6c|]
+Feb 13 20:32:49 10.71.56.0 a1751957 open "/save_song.php" flags READ mode 0666
+Feb 13 20:32:49 10.71.56.0 a1751957 open "/script.js" flags READ mode 0666
+Feb 13 20:32:50 10.71.56.0 a1751957 close "/save_song.php" bytes read 427 written 0
+Feb 13 20:32:50 10.71.56.0 a1751957 [10.71.56.0|get|1|427|0|0|0|2f736176655f736f6e672e706870|]
+Feb 13 20:32:50 10.71.56.0 a1751957 close "/script.js" bytes read 2630 written 0
+Feb 13 20:32:50 10.71.56.0 a1751957 [10.71.56.0|get|1|2630|0|0|0|2f7363726970742e6a73|]
+Feb 13 20:32:50 10.71.56.0 a1751957 open "/songs.json" flags READ mode 0666
+Feb 13 20:32:50 10.71.56.0 a1751957 open "/styles.css" flags READ mode 0666
+Feb 13 20:32:50 10.71.56.0 a1751957 close "/songs.json" bytes read 460 written 0
+Feb 13 20:32:50 10.71.56.0 a1751957 [10.71.56.0|get|0|460|0|0|0|2f736f6e67732e6a736f6e|]
+Feb 13 20:32:50 10.71.56.0 a1751957 close "/styles.css" bytes read 3318 written 0
+Feb 13 20:32:50 10.71.56.0 a1751957 [10.71.56.0|get|0|3318|0|0|0|2f7374796c65732e637373|]
+Feb 13 20:32:50 10.71.56.0 a1751957 session closed for local user a1751957 from [10.71.56.0]
+Feb 13 20:32:50 10.71.56.0 a1751957 Connection closed by 10.71.56.0 port 24274
+Feb 13 20:32:50 10.71.56.0 a1751957 open "/update_song.php" flags READ mode 0666
+Feb 13 20:32:50 10.71.56.0 a1751957 close "/update_song.php" bytes read 729 written 0
+Feb 13 20:32:50 10.71.56.0 a1751957 [10.71.56.0|get|0|729|0|0|0|2f7570646174655f736f6e672e706870|]
+Feb 13 20:32:50 10.71.56.0 a1751957 session closed for local user a1751957 from [10.71.56.0]
+Feb 13 20:32:50 10.71.56.0 a1751957 Connection closed by 10.71.56.0 port 24264
+Feb 13 20:32:50 10.71.56.0 a1751957 Connection from 10.71.56.0 port 24288 on 82.165.90.90 port 22 rdomain ""
+Feb 13 20:32:50 10.71.56.0 a1751957 Accepted password for a1751957 from 10.71.56.0 port 24288 ssh2
+Feb 13 20:32:50 10.71.56.0 a1751957 Connection from 10.71.56.0 port 47338 on 82.165.90.90 port 22 rdomain ""
+Feb 13 20:32:50 10.71.56.0 a1751957 Accepted password for a1751957 from 10.71.56.0 port 47338 ssh2
+Feb 13 20:32:50 10.71.56.0 a1751957 Starting session: subsystem 'sftp' for a1751957 from 10.71.56.0 port 24288 id 0
+Feb 13 20:32:50 10.71.56.0 a1751957 session opened for local user a1751957 from [10.71.56.0]
+Feb 13 20:32:51 10.71.56.0 a1751957 Starting session: subsystem 'sftp' for a1751957 from 10.71.56.0 port 47338 id 0
+Feb 13 20:32:51 10.71.56.0 a1751957 session opened for local user a1751957 from [10.71.56.0]
+Feb 13 20:32:51 10.71.56.0 a1751957 open "/logs/sftp.log" flags READ mode 0666

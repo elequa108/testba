@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musik Wünsche</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="menu" style="display: none;">
+    <a href="index.html">🔙 Zurück</a>
+</div>
+
+
+    <div class="container">
+        <h1>🎵 Musik Wünsche</h1>
+		<p1>Hey! Wünsche dir hier deinen Lieblingssong und überprüfe jederzeit den Status deiner Anfrage. 🎶😊</p1>
+
+        <!-- Navigationsleiste -->
+        <nav>
+            <a href="crew.html">Crew-Bereich</a>
+        </nav>
+
+        <!-- Eingabeformular für Song-Wunsch -->
+        <div class="form">
+            <input type="text" id="username" placeholder="Dein Name">
+            <input type="text" id="songTitle" placeholder="Songtitel">
+            <input type="text" id="artist" placeholder="Künstler">
+            <button onclick="sendSongRequest()">🎶 Song wünschen</button>
+        </div>
+
+        <!-- Song-Wunsch-Liste -->
+<div id="songList"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
