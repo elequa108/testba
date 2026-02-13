@@ -1,18 +1,93 @@
 /* --- Allgemeine Einstellungen --- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 20% 15%, rgba(124, 147, 255, 0.28) 0%, rgba(124, 147, 255, 0) 38%),
+        radial-gradient(circle at 82% 12%, rgba(120, 255, 214, 0.18) 0%, rgba(120, 255, 214, 0) 32%),
+        linear-gradient(165deg, #11152a 0%, #1b1f3d 46%, #0d1120 100%);
+    background-attachment: fixed;
+    color: #f8f8ff;
     text-align: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    pointer-events: none;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 34%, rgba(255, 255, 255, 0.09) 50%, rgba(255, 255, 255, 0) 66%);
+    transform: translateX(-45%) rotate(8deg);
+    animation: shimmerSweep 14s ease-in-out infinite;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.8px, transparent 0.8px);
+    background-size: 3px 3px;
+    opacity: 0.25;
+}
+
+@keyframes shimmerSweep {
+    0%,
+    100% {
+        transform: translateX(-55%) rotate(8deg);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translateX(55%) rotate(8deg);
+        opacity: 0.6;
+    }
 }
 
 /* --- Hauptcontainer --- */
 .container {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
+    max-width: 520px;
+    margin: 24px auto;
+    padding: 22px;
+    background: rgba(20, 20, 34, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.intro-text {
+    margin: 0 0 16px;
+    color: #d2d4ff;
+    line-height: 1.5;
+}
+
+nav {
+    margin-bottom: 18px;
+}
+
+nav a {
+    display: inline-block;
+    color: #9ed0ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #c0e0ff;
+    text-decoration: underline;
 }
 
 /* --- Zurück & Alle Löschen Buttons --- */
@@ -21,7 +96,7 @@ body {
     padding: 10px;
     margin: 10px 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -50,7 +125,7 @@ body {
     color: white;
     border: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -59,48 +134,68 @@ body {
     background: darkgray;
 }
 
-
 /* --- Eingabeformular für Songwünsche --- */
 .form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: #1f1f1f;
+    background: rgba(42, 42, 70, 0.65);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 14px;
     margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
     font-size: 16px;
-    background: #333;
-    color: white;
+    background: rgba(12, 14, 28, 0.8);
+    color: #f8f8ff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #84adff;
+    box-shadow: 0 0 0 3px rgba(132, 173, 255, 0.25);
 }
 
 button {
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 18px;
-    background: #007bff;
+    background: linear-gradient(135deg, #2d74ff, #4a9fff);
     color: white;
     cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 button:hover {
-    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(49, 116, 255, 0.28);
+}
+
+.status-heading {
+    margin: 10px 0 12px;
+    font-size: 20px;
+    color: #dce4ff;
 }
 
 /* --- Song-Wunsch-Liste (Öffentliche Seite) --- */
 .song {
-    background: #222;
+    background: rgba(28, 30, 52, 0.85);
     padding: 15px;
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.song p {
+    margin: 6px 0;
 }
 
 /* --- Status-Farben --- */
@@ -109,15 +204,16 @@ button:hover {
 }
 
 .status-wartend {
-    color: yellow;
+    color: #ffd86f;
 }
 
 .status-angenommen {
-    color: green;
+    color: #6bf2a0;
 }
 
 .status-abgelehnt {
-    color: red;
+    color: #ff7b7b;
+    font-weight: bold;
 }
 
 /* --- Crew-Bereich Styling --- */
@@ -181,9 +277,4 @@ button:hover {
     padding: 10px;
     font-size: 16px;
     text-align: center;
-}
-
-.status-abgelehnt {
-    color: red;
-    font-weight: bold;
 }
