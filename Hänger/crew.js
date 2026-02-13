@@ -1,5 +1,22 @@
 const PASSWORD = "hänger123"; // Optional: Stattdessen Passwort über PHP abfragen
 
+// Spotify-Suchlink bauen: Titel + Künstler kombinieren und URL-encoden
+function buildSpotifySearchLink(song) {
+    const title = song?.title?.trim() || "";
+    const artist = song?.artist?.trim() || "";
+    const searchTerm = `${title} ${artist}`.trim();
+
+    if (!searchTerm) return "https://open.spotify.com/search";
+
+    return `https://open.spotify.com/search/${encodeURIComponent(searchTerm)}`;
+}
+
+// Spotify-Suche in einem neuen Tab öffnen
+function openSpotifySearch(song) {
+    const spotifyLink = buildSpotifySearchLink(song);
+    window.open(spotifyLink, "_blank", "noopener,noreferrer");
+}
+
 // Passwortüberprüfung für Crew-Bereich
 function checkPassword() {
     const input = document.getElementById("password").value.trim();
@@ -80,6 +97,9 @@ function acceptSong(songId, title, artist) {
     document.body.removeChild(tempInput);
 
     showCopyNotification(`✅ "${title} - ${artist}" wurde in die Zwischenablage kopiert!`);
+
+    // Beim Klick auf das Häkchen zusätzlich Spotify-Suche öffnen
+    openSpotifySearch({ title, artist });
 
     fetch("update_song.php", {
         method: "POST",
