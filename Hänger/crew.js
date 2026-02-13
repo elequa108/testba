@@ -39,18 +39,20 @@ function loadCrewSongs() {
             songDiv.classList.add("crew-song");
 
             // Titel und Künstler sicherstellen, um `undefined` zu vermeiden
-            let title = song.title ? song.title.replace(/"/g, '&quot;') : "Unbekannter Titel";
-            let artist = song.artist ? song.artist.replace(/"/g, '&quot;') : "Unbekannter Künstler";
+            const title = song.title || "Unbekannter Titel";
+            const artist = song.artist || "Unbekannter Künstler";
+            const safeTitle = title.replace(/"/g, '&quot;');
+            const safeArtist = artist.replace(/"/g, '&quot;');
 
             songDiv.innerHTML = `
                 <div>
-                    <p><strong>${title}</strong></p>
-                    <p>${artist}</p>
+                    <p><strong>${safeTitle}</strong></p>
+                    <p>${safeArtist}</p>
                     <p class="user">Name: ${song.user}</p>
                     <p class="timestamp">⏰ ${song.timestamp}</p>
                     <p class="status ${getStatusClass(song.status)}">${song.status}</p>
                 </div>
-                <button class="crew-accept" onclick="acceptSong(${song.id}, '${title}', '${artist}')">✔</button>
+                <button class="crew-accept" onclick='acceptSong(${song.id}, ${JSON.stringify(title)}, ${JSON.stringify(artist)})' title="In Spotify suchen">✔</button>
                 <button class="crew-reject" onclick="rejectSong(${song.id})">✖</button>
                 <button class="crew-delete" onclick="deleteSong(${song.id})">🗑️</button>
             `;
@@ -62,6 +64,20 @@ function loadCrewSongs() {
         crewSongList.innerHTML = "<p>❌ Fehler beim Laden der Songs.</p>";
         console.error("❌ Fehler beim Laden der Songs:", error);
     });
+}
+
+
+// Spotify-Suchlink erstellen (Titel + Artist kombinieren und URL-encoden)
+function buildSpotifySearchUrl(title, artist) {
+    const searchTerm = `${title} ${artist}`.trim();
+    const encodedSearch = encodeURIComponent(searchTerm);
+    return `https://open.spotify.com/search/${encodedSearch}`;
+}
+
+// Spotify-Suche in neuem Tab öffnen
+function openSpotifySearch(title, artist) {
+    const spotifyUrl = buildSpotifySearchUrl(title, artist);
+    window.open(spotifyUrl, "_blank", "noopener,noreferrer");
 }
 
 // Song akzeptieren (Status auf "Angenommen" setzen & in Zwischenablage kopieren)
@@ -80,6 +96,9 @@ function acceptSong(songId, title, artist) {
     document.body.removeChild(tempInput);
 
     showCopyNotification(`✅ "${title} - ${artist}" wurde in die Zwischenablage kopiert!`);
+
+    // Beim Klick auf das Häkchen zusätzlich Spotify-Suche öffnen
+    openSpotifySearch(title, artist);
 
     fetch("update_song.php", {
         method: "POST",
