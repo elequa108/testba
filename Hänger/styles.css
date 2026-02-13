@@ -2,10 +2,13 @@
 body {
     font-family: "Inter", "Segoe UI", Arial, sans-serif;
     background:
-        radial-gradient(circle at 15% 20%, rgba(103, 126, 234, 0.35) 0%, rgba(103, 126, 234, 0) 35%),
-        radial-gradient(circle at 85% 10%, rgba(120, 255, 214, 0.22) 0%, rgba(120, 255, 214, 0) 30%),
-        linear-gradient(160deg, #141629 0%, #1f163d 40%, #10131f 100%);
+        radial-gradient(circle at 15% 20%, rgba(103, 126, 234, 0.28) 0%, rgba(103, 126, 234, 0) 38%),
+        radial-gradient(circle at 85% 10%, rgba(120, 255, 214, 0.18) 0%, rgba(120, 255, 214, 0) 34%),
+        radial-gradient(circle at 60% 85%, rgba(255, 140, 180, 0.12) 0%, rgba(255, 140, 180, 0) 36%),
+        linear-gradient(160deg, #141629 0%, #1f163d 45%, #10131f 100%);
     background-attachment: fixed;
+    background-size: 120% 120%;
+    animation: ambientShift 24s ease-in-out infinite;
     color: #f8f8ff;
     text-align: center;
     margin: 0;
@@ -52,6 +55,17 @@ body::after {
     50% {
         transform: translateX(55%) rotate(8deg);
         opacity: 0.6;
+    }
+}
+
+@keyframes ambientShift {
+    0%,
+    100% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
     }
 }
 
